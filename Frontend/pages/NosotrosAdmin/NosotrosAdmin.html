@@ -52,9 +52,10 @@
         </div>
         <div class="section-content">
             <h2>Nuestro objetivo</h2>
-            <p>Tenemos  como objetivo facilitar la conexión entre personas solidarias y las comunidades afectadas por desastres naturales. Buscamos proporcionar una plataforma centralizada donde los voluntarios puedan encontrar oportunidades significativas para ayudar, ya sea brindando asistencia en situaciones de emergencia.</p>
+            <p>Tenemos como objetivo facilitar la conexión entre personas solidarias y las comunidades afectadas por desastres naturales. Buscamos proporcionar una plataforma centralizada donde los voluntarios puedan encontrar oportunidades significativas para ayudar, ya sea brindando asistencia en situaciones de emergencia.</p>
         </div>
     </section>
+
     <footer class="footer">
         <p class="footer-text">Help to Us</p>
     </footer>
@@ -62,19 +63,26 @@
     <div id="edit-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Editar Imágenes</h2>
-            <form id="image-form">
+            <h2>Editar Contenido</h2>
+            <form id="edit-form">
                 <label for="main-image">Enlace de la imagen principal:</label><br>
                 <input type="text" id="main-image" name="main-image"><br>
                 <label for="section1-image">Enlace de la imagen de la sección 1:</label><br>
                 <input type="text" id="section1-image" name="section1-image"><br>
+                <label for="section1-text">Texto de la sección 1:</label><br>
+                <textarea id="section1-text" name="section1-text" rows="4"></textarea><br>
                 <label for="section2-image">Enlace de la imagen de la sección 2:</label><br>
-                <input type="text" id="section2-image" name="section2-image"><br><br>
+                <input type="text" id="section2-image" name="section2-image"><br>
+                <label for="section2-text">Texto de la sección 2:</label><br>
+                <textarea id="section2-text" name="section2-text" rows="4"></textarea><br><br>
                 <button type="submit">Guardar</button>
             </form>
         </div>
     </div>
-    
-    <script src="NosotrosAdmin.js"></script>
+    <br>
+    <br>
+    <br>
+
+    <script src="funciones.js"></script>
 </body>
 </html>
