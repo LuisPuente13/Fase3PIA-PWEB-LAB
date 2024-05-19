@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Help to Us - Paquetes - Administrador</title>
+</head>
+<body>
+
+    <!-- ENCABEZADOS PAGINA -->
+    <header class="header">
+        <img src="LOGO.jpeg" alt="Help to Us Logo">
+        <h3>HELP TO US</h3>
+        <nav>
+            <button id="inicio">Inicio</button>
+            <button id="voluntarios">Voluntarios</button>
+            <button id="desastres">Desastres</button>
+            <button id="paquetes" class="active">Paquetes</button>
+            <button id="donantes">Donantes</button>
+            <button id="bodega">Bodegas</button>
+            <button id="fotos">Fotos</button>
+            <button id="nosotros">Nosotros</button>
+            <button id="administrador">Administrador</button>
+            <button id="logout">Log Out</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Paquetes</h1>
+    </div>
+
+    <div class="right-align">
+        <button id="agregar" name="agregar">Agregar</button>
+    </div>
+    <br><br>
+    <div class="containerTable">
+        <br>
+        <br>
+        <div class="containerTable">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Paquete 1</td>
+                    <td>1kg Frijol, 1Kg arroz</td>
+                    <td>$100</td>
+                    <td>
+                        <button class="editar" data-id="1" data-nombre="Paquete 1" data-descripcion="1kg Frijol, 1Kg arroz" data-precio="100">Editar</button>
+                        <button class="eliminar" data-id="1">Eliminar</button>
+                    </td>
+                </tr>
+                <!-- Más filas aquí -->
+            </table>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        HELP TO US
+    </footer>
+
+    <!-- Ventana emergente Agregar -->
+    <div id="modalAgregar" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Agregar Paquete</h2>
+            <form id="agregarForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="descripcion">Descripción:</label>
+                <input type="text" id="descripcion" name="descripcion" required>
+
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" name="precio" required>
+
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Ventana emergente Editar -->
+    <div id="modalEditar" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Editar Paquete</h2>
+            <form id="editarForm">
+                <input type="hidden" id="editId" name="editId">
+                <label for="editNombre">Nombre:</label>
+                <input type="text" id="editNombre" name="editNombre" required>
+                
+                <label for="editDescripcion">Descripción:</label>
+                <input type="text" id="editDescripcion" name="editDescripcion" required>
+
+                <label for="editPrecio">Precio:</label>
+                <input type="number" id="editPrecio" name="editPrecio" required>
+
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Ventana emergente Eliminar -->
+    <div id="modalEliminar" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Eliminar Paquete</h2>
+            <p>¿Estás seguro que deseas eliminar este paquete?</p>
+            <div class="button-container">
+                <button id="aceptarEliminar">Aceptar</button>
+                <button id="rechazarEliminar">Rechazar</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="funciones.js"></script>
+</body>
+</html>
+

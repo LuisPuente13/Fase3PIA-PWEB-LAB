@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="LogoNA.png" alt="Logo" class="logo-img">
+            <span class="logo-name">Help to Us</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="inicio.html" class="nav-link">Inicio</a></li>
+            <li><a href="voluntarios.html" class="nav-link">Voluntarios</a></li>
+            <li><a href="desastres.html" class="nav-link">Desastres</a></li>
+            <li><a href="paquetes.html" class="nav-link">Paquetes</a></li>
+            <li><a href="donantes.html" class="nav-link">Donantes</a></li>
+            <li><a href="bodegas.html" class="nav-link">Bodegas</a></li>
+            <li><a href="FotoAdmin.html" class="nav-link">Fotos</a></li>
+            <li><a href="NosotrosAdmin.html" class="nav-link active">Nosotros</a></li>
+            <li><a href="administrador.html" class="nav-link">Administrador</a></li>
+            <li><a href="logout.html" class="nav-link">Log out</a></li>
+        </ul>
+    </nav>
+
+    <div class="background-image" style="background-image: url('principal.png')">
+        <div class="content">
+            <h1 class="title">Sobre Nosotros</h1>
+            <p class="description">Help to Us</p>
+            <button id="edit-button">Editar</button>
+        </div>
+    </div>
+
+    <section class="section-cafe">
+        <div class="section-content">
+            <h2>¿Quiénes somos?</h2>
+            <p>Somos Help to us, página web está enfocada a ayudar a compartir información de los desastres que surgen a nivel nacional en nuestro país. El propósito de la página es ayudar a tener una logística más eficiente para cuando surge un desastre natural y así mismo poder hacer llegar la ayuda de una manera más rápida y eficiente.</p>
+        </div>
+        <div class="section-image">
+            <img src="partnership.png" alt="Imagen Café">
+        </div>
+    </section>
+
+    <div class="section-space"></div>
+
+    <section class="section-cafe">
+        <div class="section-image">
+            <img src="target.png" alt="Otra Imagen">
+        </div>
+        <div class="section-content">
+            <h2>Nuestro objetivo</h2>
+            <p>Tenemos  como objetivo facilitar la conexión entre personas solidarias y las comunidades afectadas por desastres naturales. Buscamos proporcionar una plataforma centralizada donde los voluntarios puedan encontrar oportunidades significativas para ayudar, ya sea brindando asistencia en situaciones de emergencia.</p>
+        </div>
+    </section>
+    <footer class="footer">
+        <p class="footer-text">Help to Us</p>
+    </footer>
+
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Editar Imágenes</h2>
+            <form id="image-form">
+                <label for="main-image">Enlace de la imagen principal:</label><br>
+                <input type="text" id="main-image" name="main-image"><br>
+                <label for="section1-image">Enlace de la imagen de la sección 1:</label><br>
+                <input type="text" id="section1-image" name="section1-image"><br>
+                <label for="section2-image">Enlace de la imagen de la sección 2:</label><br>
+                <input type="text" id="section2-image" name="section2-image"><br><br>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="NosotrosAdmin.js"></script>
+</body>
+</html>
