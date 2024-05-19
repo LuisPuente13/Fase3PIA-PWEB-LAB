@@ -95,34 +95,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-/* FASE 1 -->BOTONES REDIRECCIONAR A OTRO HTML */
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('inicio').addEventListener('click', () => {
-        window.location.href = ''; 
-    });
-
-    document.getElementById('donar').addEventListener('click', () => {
-        window.location.href = ''; 
-    });
-
-    document.getElementById('mis-donaciones').addEventListener('click', () => {
-        window.location.href = ''; 
-    });
-
-    document.getElementById('fotos').addEventListener('click', () => {
-        window.location.href = ''; 
-    });
-
-    document.getElementById('nosotros').addEventListener('click', () => {
-        window.location.href = ''; 
-    });
-
-    document.getElementById('donante').addEventListener('click', () => {
-        window.location.href = 'donante.html'; 
-    });
-
-    document.getElementById('logout').addEventListener('click', () => {
-        window.location.href = 'logout.html'; 
-    });
-});
