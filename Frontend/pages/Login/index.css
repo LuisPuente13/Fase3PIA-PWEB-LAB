@@ -1,0 +1,94 @@
+body {
+    background-color: #E8E7CB;
+}
+
+/* Estilos para centrar el div */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para dividir el div en dos partes */
+#container {
+    width: 1150px; /* Ancho del contenedor */
+    height: 480px; /* Altura del contenedor */
+    display: flex;
+}
+
+.left {
+    flex: 1; /* Hace que ocupe la mitad del ancho */
+    background-color: #AEFEB1; /* Color de fondo de la parte izquierda */
+    border-top-left-radius: 15%; /* Redondea la esquina superior izquierda */
+    border-bottom-left-radius: 15%; /* Redondea la esquina inferior izquierda */
+}
+
+.right {
+    flex: 1; /* Hace que ocupe la otra mitad del ancho */
+    background-color: #FFFFFF; /* Color de fondo de la parte derecha */
+    border-top-right-radius: 15%; /* Redondea la esquina superior derecha */
+    border-bottom-right-radius: 15%; /* Redondea la esquina inferior derecha */
+}
+
+.containerLeft,
+.containerRight {
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-top: 160px;
+}
+
+#LOGO {
+    width: 150px;
+    height: 150px;
+}
+
+/* Estilos para los campos de entrada de correo electrónico y contraseña */
+.inpCorreo,
+.inpContraseña {
+    margin-bottom: 10px; /* Ajusta el espacio entre los campos */
+}
+
+/* Estilos adicionales para el botón de registro */
+.containerRight button:last-child {
+    margin-top: 10px; /* Ajusta el espacio entre el botón de iniciar sesión y el de registro */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    
+  }
+  
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #registroForm {
+    color:aqua
+  }
