@@ -68,7 +68,7 @@ body {
 }
 
 .background-image {
-    background-image: url('principal.png');
+    background-image: url('Img7.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -222,4 +222,3 @@ body {
 #editForm button:hover {
     background-color: #90e890;
 }
-
