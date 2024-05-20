@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Help to Us - Desastres - Administrador</title>
+</head>
+<body>
+
+    <!-- ENCABEZADOS PAGINA -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="LOGO.jpeg" alt="Logo" class="logo-img">
+            <span class="logo-name">Help to Us</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="PaginainicioAdmin.html" class="nav-link">Inicio</a></li>
+            <li><a href="VoluntariosAdmin.html" class="nav-link">Voluntarios</a></li>
+            <li><a href="DesastresAdmin.html" class="nav-link active">Desastres</a></li>
+            <li><a href="PaquetesAdmin.html" class="nav-link">Paquetes</a></li>
+            <li><a href="DonantesAdmin.html" class="nav-link">Donantes</a></li>
+            <li><a href="BodegasAdmin.html" class="nav-link">Bodegas</a></li>
+            <li><a href="FotosAdmin.html" class="nav-link">Fotos</a></li>
+            <li><a href="NosotrosAdmin.html" class="nav-link">Nosotros</a></li>
+            <li><a href="administrador.html" class="nav-link">Administrador</a></li>
+            <li><a href="logout.html" class="nav-link">Log out</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="container">
+        <div class="title-container">
+            <h1 class="title">Desastres</h1>
+        </div>
+    </div>
+
+    <div class="right-align">
+        <button id="agregar" name="agregar">Agregar</button>
+    </div>
+    <br><br>
+
+    <div class="containerTable">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Estatus</th>
+                <th>Acciones</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Desastre 1</td>
+                <td>Nuevo Leon</td>
+                <td>
+                    <select class="estatus" data-estatus="Activo">
+                        <option value="Activo">Activo</option>
+                        <option value="Terminado">Terminado</option>
+                    </select>
+                </td>
+                <td>
+                    <div class="button-container">
+                        <button class="editar" data-id="1" data-nombre="Desastre 1" data-estado="Nuevo Leon" data-estatus="Activo">Editar</button>
+                        <button class="eliminar" data-id="1">Eliminar</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Desastre 2</td>
+                <td>Jalisco</td>
+                <td>
+                    <select class="estatus" data-estatus="Terminado">
+                        <option value="Activo">Activo</option>
+                        <option value="Terminado">Terminado</option>
+                    </select>
+                </td>
+                <td>
+                    <div class="button-container">
+                        <button class="editar" data-id="2" data-nombre="Desastre 2" data-estado="Jalisco" data-estatus="Terminado">Editar</button>
+                        <button class="eliminar" data-id="2">Eliminar</button>
+                    </div>
+                </td>
+            </tr>
+            <!-- Más filas aquí -->
+        </table>
+    </div>
+
+
+    <!-- Ventana emergente Agregar -->
+    <div id="modalAgregar" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Agregar Desastre</h2>
+            <form id="agregarForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="estado">Estado:</label>
+                <select id="estado" name="estado" required>
+                    <option value="Nuevo Leon">Nuevo Leon</option>
+                    <option value="Jalisco">Jalisco</option>
+                    <option value="CDMX">CDMX</option>
+                </select>
+
+                <label for="estatus">Estatus:</label>
+                <select id="estatus" name="estatus" required>
+                    <option value="Activo">Activo</option>
+                    <option value="Terminado">Terminado</option>
+                </select>
+
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Ventana emergente Editar -->
+    <div id="modalEditar" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Editar Desastre</h2>
+            <form id="editarForm">
+                <input type="hidden" id="editId" name="editId">
+                <label for="editNombre">Nombre:</label>
+                <input type="text" id="editNombre" name="editNombre" required>
+                
+                <label for="editEstado">Estado:</label>
+                <select id="editEstado" name="editEstado" required>
+                    <option value="Nuevo Leon">Nuevo Leon</option>
+                    <option value="Jalisco">Jalisco</option>
+                    <option value="CDMX">CDMX</option>
+                </select>
+
+                <label for="editEstatus">Estatus:</label>
+                <select id="editEstatus" name="editEstatus" class="estatus" required>
+                    <option value="Activo">Activo</option>
+                    <option value="Terminado">Terminado</option>
+                </select>
+
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Ventana emergente Eliminar -->
+    <div id="modalEliminar" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Eliminar Desastre</h2>
+            <p>¿Estás seguro que deseas eliminar este desastre?</p>
+            <div class="button-container">
+                <button id="aceptarEliminar">Aceptar</button>
+                <button id="rechazarEliminar">Rechazar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p class="footer-text">Help to Us</p>
+    </footer>
+
+    <script type="text/javascript" src="funciones.js"></script>
+</body>
+</html>
