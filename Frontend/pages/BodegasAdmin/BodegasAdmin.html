@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Help to Us - Bodegas - Administrador</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="LOGO.jpeg" alt="Logo" class="logo-img">
+            <span class="logo-name">Help to Us</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="PaginainicioAdmin.html" class="nav-link">Inicio</a></li>
+            <li><a href="VoluntariosAdmin.html" class="nav-link">Voluntarios</a></li>
+            <li><a href="desastres.html" class="nav-link">Desastres</a></li>
+            <li><a href="paquetes.html" class="nav-link">Paquetes</a></li>
+            <li><a href="donantes.html" class="nav-link">Donantes</a></li>
+            <li><a href="BodegasAdmin.html" class="nav-link active">Bodegas</a></li>
+            <li><a href="FotosAdmin.html" class="nav-link">Fotos</a></li>
+            <li><a href="NosotrosAdmin.html" class="nav-link">Nosotros</a></li>
+            <li><a href="administrador.html" class="nav-link">Administrador</a></li>
+            <li><a href="logout.html" class="nav-link">Log out</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="title-container">
+            <h1 class="title">Bodegas</h1>
+        </div>
+    </div>
+
+    <div class="right-align">
+        <button id="agregar" name="agregar">Agregar</button>
+    </div>
+    <br><br>
+
+    <div class="containerTable">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Bodega 1</td>
+                <td>Nuevo Leon</td>
+                <td>
+                    <button class="editar" data-id="1" data-nombre="Bodega 1" data-estado="Nuevo Leon" data-calle="Calle 1" data-colonia="Colonia 1" data-municipio="Municipio 1" data-numeroexterior="123" data-numerointerior="4A">Editar</button>
+                    <button class="eliminar" data-id="1">Eliminar</button>
+                </td>
+            </tr>
+            <!-- Más filas aquí -->
+        </table>
+    </div>
+
+    
+    
+    <!-- Ventana emergente Agregar -->
+    <div id="modalAgregar" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Agregar Bodega</h2>
+            <form id="agregarForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="estado">Estado:</label>
+                <select id="estado" name="estado" required>
+                    <option value="Nuevo Leon">Nuevo Leon</option>
+                    <option value="Jalisco">Jalisco</option>
+                    <option value="CDMX">CDMX</option>
+                </select>
+
+                <label for="calle">Calle:</label>
+                <input type="text" id="calle" name="calle" required>
+
+                <label for="colonia">Colonia:</label>
+                <input type="text" id="colonia" name="colonia" required>
+
+                <label for="municipio">Municipio:</label>
+                <input type="text" id="municipio" name="municipio" required>
+
+                <label for="numeroExterior">Número Exterior:</label>
+                <input type="text" id="numeroExterior" name="numeroExterior" required>
+
+                <label for="numeroInterior">Número Interior:</label>
+                <input type="text" id="numeroInterior" name="numeroInterior">
+
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Ventana emergente Editar -->
+    <div id="modalEditar" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Editar Bodega</h2>
+            <form id="editarForm">
+                <input type="hidden" id="editId" name="editId">
+                <label for="editNombre">Nombre:</label>
+                <input type="text" id="editNombre" name="editNombre" required>
+                
+                <label for="editEstado">Estado:</label>
+                <select id="editEstado" name="editEstado" required>
+                    <option value="Nuevo Leon">Nuevo Leon</option>
+                    <option value="Jalisco">Jalisco</option>
+                    <option value="CDMX">CDMX</option>
+                </select>
+
+                <label for="editCalle">Calle:</label>
+                <input type="text" id="editCalle" name="editCalle" required>
+
+                <label for="editColonia">Colonia:</label>
+                <input type="text" id="editColonia" name="editColonia" required>
+
+                <label for="editMunicipio">Municipio:</label>
+                <input type="text" id="editMunicipio" name="editMunicipio" required>
+
+                <label for="editNumeroExterior">Número Exterior:</label>
+                <input type="text" id="editNumeroExterior" name="editNumeroExterior" required>
+
+                <label for="editNumeroInterior">Número Interior:</label>
+                <input type="text" id="editNumeroInterior" name="editNumeroInterior">
+
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Ventana emergente Eliminar -->
+    <div id="modalEliminar" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Eliminar Bodega</h2>
+            <p>¿Estás seguro que deseas eliminar la bodega?</p>
+            <div class="button-container">
+                <button id="aceptarEliminar">Aceptar</button>
+                <button id="rechazarEliminar">Rechazar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p class="footer-text">Help to Us</p>
+    </footer>
+
+    <script type="text/javascript" src="funciones.js"></script>
+</body>
+</html>
