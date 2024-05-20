@@ -138,7 +138,6 @@ body {
     border-radius: 10px;
     border: 2px solid #000;
 }
-
 .container h1 {
     margin: 0; /* Elimina el margen del encabezado */
     font-size: 36px; /* Tamaño de la fuente */
@@ -153,6 +152,12 @@ body {
     margin: 20px;
 }
 
+.container h1 {
+    margin: 0; /* Elimina el margen del encabezado */
+    font-size: 36px; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    color: white; /* Color del texto blanco */
+}
 .footer {
     background-color: #a2fca2;
     text-align: center;

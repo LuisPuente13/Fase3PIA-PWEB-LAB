@@ -103,40 +103,65 @@ body {
     padding: 0;
 }
 
-.header {
-    background-color: #a2fca2;
-    padding: 10px;
+.navbar {
+    background-color: #AEFEB1;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.header img {
-    height: 50px;
-}
-
-.header nav {
+.logo {
     display: flex;
-    gap: 15px;
+    align-items: center;
 }
 
-.header button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #a2fca2;
+.logo-img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo-name {
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 1.5em;
     font-weight: bold;
-    cursor: pointer;
+    color: white;
+    line-height: 1;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
     transition: background-color 0.3s;
 }
 
-.header .active {
-    background-color: white;
-    border: black solid;
+.nav-link:hover,
+.nav-link.active {
+    background-color: #fff;
+    border: 2px solid #000;
 }
 
-.header button:hover {
-    background-color: #90e890;
+.nav-link.active {
+    border-radius: 10px;
+    border: 2px solid #000;
 }
 
 .container h1 {
