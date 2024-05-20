@@ -67,6 +67,19 @@ document.addEventListener('DOMContentLoaded', () => {
         modalEliminar.style.display = "none";
     }
 
+    // Ventana emergente Reporte
+    const modalReporte = document.getElementById("modalReporte");
+    const reporteButton = document.getElementById("reporte");
+    const closeReporteButton = modalReporte.querySelector(".close-button");
+
+    reporteButton.onclick = function() {
+        modalReporte.style.display = "block";
+    }
+
+    closeReporteButton.onclick = function() {
+        modalReporte.style.display = "none";
+    }
+
     window.onclick = function(event) {
         if (event.target == modalAgregar) {
             modalAgregar.style.display = "none";
@@ -76,6 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (event.target == modalEliminar) {
             modalEliminar.style.display = "none";
+        }
+        if (event.target == modalReporte) {
+            modalReporte.style.display = "none";
         }
     }
 });
