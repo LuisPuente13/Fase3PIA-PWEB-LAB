@@ -1,19 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Botones de navegación
-    const buttons = document.querySelectorAll('.header button');
-    buttons.forEach(button => {
-        button.addEventListener('mouseover', () => {
-            if (!button.classList.contains('active')) {
-                button.style.backgroundColor = '#90e890';
-            }
-        });
-        button.addEventListener('mouseout', () => {
-            if (!button.classList.contains('active')) {
-                button.style.backgroundColor = '#a2fca2';
-            }
-        });
+    document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
     });
-
     // Datos de ejemplo para las solicitudes
     const solicitudes = [
         { id: 1, nombre: 'Juan', email: 'juan@example.com', solicitud: 'Quiero donar más paquetes.' },
