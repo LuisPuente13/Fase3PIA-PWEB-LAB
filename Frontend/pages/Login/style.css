@@ -1,5 +1,6 @@
 body {
     background-color: #E8E7CB;
+    font-family: Arial, sans-serif;
 }
 
 /* Estilos para centrar el div */
@@ -49,9 +50,21 @@ body, html {
     margin-bottom: 10px; /* Ajusta el espacio entre los campos */
 }
 
-/* Estilos adicionales para el botón de registro */
-.containerRight button:last-child {
-    margin-top: 10px; /* Ajusta el espacio entre el botón de iniciar sesión y el de registro */
+/* Estilos para los botones */
+.button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #45a049;
 }
 
 .modal {
@@ -64,31 +77,51 @@ body, html {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    
-  }
-  
-  .close {
-    color: #aaaaaa;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #000;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
     text-decoration: none;
     cursor: pointer;
-  }
-  
-  #registroForm {
-    color:aqua
-  }
+}
+
+#registroForm label {
+    margin: 10px 0 5px;
+}
+
+#registroForm input,
+#registroForm select {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Espacio debajo del contenedor del checkbox */
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 5px; /* Espacio entre el checkbox y el texto */
+}
