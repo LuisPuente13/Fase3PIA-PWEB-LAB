@@ -1,52 +1,39 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const editButton = document.getElementById('edit-button');
-    const modal = document.getElementById('edit-modal');
-    const closeModal = document.getElementsByClassName('close')[0];
+document.addEventListener("DOMContentLoaded", function() {
+    var modal = document.getElementById("edit-modal");
+    var btn = document.getElementById("edit-button");
+    var span = document.getElementsByClassName("close")[0];
+    var saveBtn = document.getElementById("edit-form").querySelector("button[type='submit']");
 
-    editButton.addEventListener('click', function () {
-        modal.style.display = 'block';
-    });
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
 
-    closeModal.addEventListener('click', function () {
-        modal.style.display = 'none';
-    });
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
 
-    window.addEventListener('click', function (event) {
+    window.onclick = function(event) {
         if (event.target == modal) {
-            modal.style.display = 'none';
+            modal.style.display = "none";
         }
-    });
+    }
 
-    const form = document.getElementById('edit-form');
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
+    saveBtn.onclick = function(event) {
+        event.preventDefault(); // Prevenir que el formulario se envíe
 
-        const mainImage = document.getElementById('main-image').value;
-        const section1Image = document.getElementById('section1-image').value;
-        const section1Text = document.getElementById('section1-text').value;
-        const section2Image = document.getElementById('section2-image').value;
-        const section2Text = document.getElementById('section2-text').value;
+        var mainImage = document.getElementById("main-image").value;
+        var section1Image = document.getElementById("section1-image").value;
+        var section1Text = document.getElementById("section1-text").value;
+        var section2Image = document.getElementById("section2-image").value;
+        var section2Text = document.getElementById("section2-text").value;
 
-        if (mainImage) {
-            document.querySelector('.background-image').style.backgroundImage = `url('${mainImage}')`;
-        }
+        // Actualizar contenido en la página
+        document.querySelector(".background-image").style.backgroundImage = `url(${mainImage})`;
+        document.querySelector(".section-image img").src = section1Image;
+        document.querySelector(".section-content p").textContent = section1Text;
+        document.querySelectorAll(".section-image img")[1].src = section2Image;
+        document.querySelectorAll(".section-content p")[1].textContent = section2Text;
 
-        if (section1Image) {
-            document.querySelectorAll('.section-image img')[0].src = section1Image;
-        }
-
-        if (section1Text) {
-            document.querySelectorAll('.section-content p')[0].textContent = section1Text;
-        }
-
-        if (section2Image) {
-            document.querySelectorAll('.section-image img')[1].src = section2Image;
-        }
-
-        if (section2Text) {
-            document.querySelectorAll('.section-content p')[1].textContent = section2Text;
-        }
-
-        modal.style.display = 'none';
-    });
+        modal.style.display = "none";
+    }
 });
