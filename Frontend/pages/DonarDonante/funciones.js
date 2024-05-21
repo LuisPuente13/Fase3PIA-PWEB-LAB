@@ -3,10 +3,18 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.nav-link').forEach(link => {
-        if (link.href === window.location.href) {
-            link.classList.add('active');
-        }
+    const buttons = document.querySelectorAll('.header button');
+    buttons.forEach(button => {
+        button.addEventListener('mouseover', () => {
+            if (!button.classList.contains('active')) {
+                button.style.backgroundColor = '#90e890';
+            }
+        });
+        button.addEventListener('mouseout', () => {
+            if (!button.classList.contains('active')) {
+                button.style.backgroundColor = '#a2fca2';
+            }
+        });
     });
 
     /* FASE 2 -->SOLICITAR VOLUNTARIADO */

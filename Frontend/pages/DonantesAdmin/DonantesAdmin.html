@@ -1,91 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <title>Help to Us - Donantes</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="logo">
-            <img src="LOGO.jpeg" alt="Logo" class="logo-img">
-            <span class="logo-name">Help to Us</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="../PaginaInicioAdmin/PaginaInicioAdmin.html" class="nav-link">Inicio</a></li>
-            <li><a href="../VoluntariosAdmin/VoluntariosAdmin.html" class="nav-link">Voluntarios</a></li>
-            <li><a href="../DesastresAdmin/DesastresAdmin.html" class="nav-link">Desastres</a></li>
-            <li><a href="../ReportePaquetesAdmin/PaquetesAdmin.html" class="nav-link">Paquetes</a></li>
-            <li><a href="../DonantesAdmin/DonantesAdmin.html" class="nav-link active">Donantes</a></li>
-            <li><a href="../BodegasAdmin/BodegasAdmin.html" class="nav-link">Bodegas</a></li>
-            <li><a href="../FotosAdmin/FotosAdmin.html" class="nav-link">Fotos</a></li>
-            <li><a href="../NosotrosAdmin/NosotrosAdmin.html" class="nav-link">Nosotros</a></li>
-            <li><a class="nav-link">Administrador</a></li>
-            <li><a href="../Login/login.html" class="nav-link">Log out</a></li>
-        </ul>
+      <div class="logo">
+        <img src="LOGO.jpeg" alt="Logo" class="logo-img" />
+        <span class="logo-name">Help to Us</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="../PaginaInicioAdmin/PaginaInicioAdmin.html" class="nav-link"
+            >Inicio</a
+          >
+        </li>
+        <li>
+          <a href="../VoluntariosAdmin/VoluntariosAdmin.html" class="nav-link"
+            >Voluntarios</a
+          >
+        </li>
+        <li>
+          <a href="../DesastresAdmin/DesastresAdmin.html" class="nav-link"
+            >Desastres</a
+          >
+        </li>
+        <li>
+          <a href="../ReportePaquetesAdmin/PaquetesAdmin.html" class="nav-link"
+            >Paquetes</a
+          >
+        </li>
+        <li>
+          <a href="../DonantesAdmin/DonantesAdmin.html" class="nav-link active"
+            >Donantes</a
+          >
+        </li>
+        <li>
+          <a href="../BodegasAdmin/BodegasAdmin.html" class="nav-link"
+            >Bodegas</a
+          >
+        </li>
+        <li>
+          <a href="../FotosAdmin/FotosAdmin.html" class="nav-link">Fotos</a>
+        </li>
+        <li>
+          <a href="../NosotrosAdmin/NosotrosAdmin.html" class="nav-link"
+            >Nosotros</a>
+        </li>
+        <li><a class="nav-link">Administrador</a></li>
+        <li><a href="../Login/login.html" class="nav-link">Log out</a></li>
+      </ul>
     </nav>
 
-
     <div class="container">
-        <div class="title-container">
-            <h1 class="title">Donantes</h1>
-        </div>
+      <div class="title-container">
+        <h1 class="title">Donantes</h1>
+      </div>
     </div>
 
     <div class="right-align">
-        <button id="solicitudes" name="solicitudes">Solicitudes</button>
+      <button id="solicitudes" name="solicitudes">Solicitudes</button>
     </div>
-    <br>
-    <br>
+    <br />
+    <br />
 
     <div class="containerTable">
-        <div class="containerTable">
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Cantidad de paquetes Donados</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Angel</td>
-                    <td>angel-04@hotmail.com</td>
-                    <td>2</td>
-                </tr>
-                <!-- Más filas aquí -->
-            </table>
-        </div>
+      <div class="containerTable">
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Cantidad de paquetes Donados</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Angel</td>
+            <td>angel-04@hotmail.com</td>
+            <td>2</td>
+          </tr>
+          <!-- Más filas aquí -->
+        </table>
+      </div>
     </div>
 
     <!-- Pie de página -->
-  
+
     <footer class="footer">
-        <p class="footer-text">Help to Us</p>
+      <p class="footer-text">Help to Us</p>
     </footer>
 
     <!-- Ventana emergente Solicitudes -->
     <div id="modalSolicitudes" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Solicitudes</h2>
-            <div class="solicitudes-container">
-                <!-- Las solicitudes se generarán dinámicamente aquí -->
-            </div>
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Solicitudes</h2>
+        <div class="solicitudes-container">
+          <!-- Las solicitudes se generarán dinámicamente aquí -->
         </div>
+      </div>
     </div>
 
     <!-- Ventana emergente Confirmación -->
     <div id="modalConfirmacion" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Confirmación</h2>
-            <p id="mensajeConfirmacion"></p>
-        </div>
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Confirmación</h2>
+        <p id="mensajeConfirmacion"></p>
+      </div>
     </div>
 
     <script type="text/javascript" src="funciones.js"></script>
-</body>
+  </body>
 </html>
