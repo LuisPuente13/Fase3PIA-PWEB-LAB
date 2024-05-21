@@ -1,142 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help to Us-Fotos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help to Us - Fotos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="logo">
-            <img src="logo.png" alt="Logo" class="logo-img">
-            <span class="logo-name">Help to Us</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="../PaginaInicioAdmin/PaginaInicioAdmin.html" class="nav-link">Inicio</a></li>
-            <li><a href="../VoluntariosAdmin/VoluntariosAdmin.html" class="nav-link">Voluntarios</a></li>
-            <li><a href="../DesastresAdmin/DesastresAdmin.html" class="nav-link">Desastres</a></li>
-            <li><a href="../ReportePaquetesAdmin/PaquetesAdmin.html" class="nav-link">Paquetes</a></li>
-            <li><a href="../DonantesAdmin/DonantesAdmin.html" class="nav-link">Donantes</a></li>
-            <li><a href="../BodegasAdmin/BodegasAdmin.html" class="nav-link">Bodegas</a></li>
-            <li><a href="../FotosAdmin/FotosAdmin.html" class="nav-link active">Fotos</a></li>
-            <li><a href="../NosotrosAdmin/NosotrosAdmin.html" class="nav-link">Nosotros</a></li>
-            <li><a class="nav-link">Administrador</a></li>
-            <li><a href="../Login/login.html" class="nav-link">Log out</a></li>
-        </ul>
+      <div class="logo">
+        <img src="logo.png" alt="Logo" class="logo-img" />
+        <span class="logo-name">Help to Us</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="../PaginaInicioAdmin/PaginaInicioAdmin.html" class="nav-link"
+            >Inicio</a
+          >
+        </li>
+        <li>
+          <a href="../VoluntariosAdmin/VoluntariosAdmin.html" class="nav-link"
+            >Voluntarios</a
+          >
+        </li>
+        <li>
+          <a href="../DesastresAdmin/DesastresAdmin.html" class="nav-link"
+            >Desastres</a
+          >
+        </li>
+        <li>
+          <a href="../ReportePaquetesAdmin/PaquetesAdmin.html" class="nav-link"
+            >Paquetes</a
+          >
+        </li>
+        <li>
+          <a href="../DonantesAdmin/DonantesAdmin.html" class="nav-link"
+            >Donantes</a
+          >
+        </li>
+        <li>
+          <a href="../BodegasAdmin/BodegasAdmin.html" class="nav-link"
+            >Bodegas</a
+          >
+        </li>
+        <li>
+          <a href="../FotosAdmin/FotosAdmin.html" class="nav-link active"
+            >Fotos</a
+          >
+        </li>
+        <li>
+          <a href="../NosotrosAdmin/NosotrosAdmin.html" class="nav-link"
+            >Nosotros</a
+          >
+        </li>
+        <li><a class="nav-link">Administrador</a></li>
+        <li><a href="../Login/login.html" class="nav-link">Log out</a></li>
+      </ul>
     </nav>
 
     <div class="container">
-        <div class="title-container">
-            <h1 class="title">Fotos</h1>
-            <button class="edit-button">Editar</button>
-        </div>
+      <div class="title-container">
+        <h1 class="title">Fotos</h1>
+        <button class="edit-button">Editar</button>
+      </div>
     </div>
 
-
     <div class="section-container">
-        <div class="section">
-            <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="desastres.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="desastres.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="desastres.png" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+      <div class="section">
+        <div
+          id="carouselExampleControls1"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="desastres.png" class="d-block w-100" alt="..." />
             </div>
-        </div>
-        <div class="section">
-            <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="desastres.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="desastres.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="desastres.png" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+            <div class="carousel-item">
+              <img src="desastres.png" class="d-block w-100" alt="..." />
             </div>
+            <div class="carousel-item">
+              <img src="desastres.png" class="d-block w-100" alt="..." />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls1"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls1"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
+      </div>
+      <div class="section">
+        <div
+          id="carouselExampleControls2"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="desastres.png" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="desastres.png" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="desastres.png" class="d-block w-100" alt="..." />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls2"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls2"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
     </div>
-    
 
     <div class="section-container">
-        <div class="section">
-            <img src="desastres.png" alt="Imagen 1" class="section-image">
-        </div>
-        <div class="section">
-            <img src="desastres.png" alt="Imagen 2" class="section-image">
-        </div>
+      <div class="section">
+        <img src="desastres.png" alt="Imagen 1" class="section-image" />
+      </div>
+      <div class="section">
+        <img src="desastres.png" alt="Imagen 2" class="section-image" />
+      </div>
     </div>
 
     <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <h2>Editar Fotos</h2>
-            <form id="edit-form">
-                <h3>Editar Carrusel 1</h3>
-                <label for="carousel1-image1-url">Imagen 1:</label>
-                <input type="text" id="carousel1-image1-url" name="carousel1-image1-url">
-                <label for="carousel1-image2-url">Imagen 2:</label>
-                <input type="text" id="carousel1-image2-url" name="carousel1-image2-url">
-                <label for="carousel1-image3-url">Imagen 3:</label>
-                <input type="text" id="carousel1-image3-url" name="carousel1-image3-url">
-                
-                
-                <h3>Editar Carrusel 2</h3>
-                <label for="carousel2-image1-url">Imagen 1:</label>
-                <input type="text" id="carousel2-image1-url" name="carousel2-image1-url">
-                <label for="carousel2-image2-url">Imagen 2:</label>
-                <input type="text" id="carousel2-image2-url" name="carousel2-image2-url">
-                <label for="carousel2-image3-url">Imagen 3:</label>
-                <input type="text" id="carousel2-image3-url" name="carousel2-image3-url">
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2>Editar Fotos</h2>
+        <form id="edit-form">
+          <h3>Editar Carrusel 1</h3>
+          <label for="carousel1-image1-url">Imagen 1:</label>
+          <input
+            type="text"
+            id="carousel1-image1-url"
+            name="carousel1-image1-url"
+          />
+          <label for="carousel1-image2-url">Imagen 2:</label>
+          <input
+            type="text"
+            id="carousel1-image2-url"
+            name="carousel1-image2-url"
+          />
+          <label for="carousel1-image3-url">Imagen 3:</label>
+          <input
+            type="text"
+            id="carousel1-image3-url"
+            name="carousel1-image3-url"
+          />
 
-                <h3>Editar Imágenes Estáticas</h3>
-                <label for="static-image1-url">Imagen Estática 1:</label>
-                <input type="text" id="static-image1-url" name="static-image1-url">
-                <label for="static-image2-url">Imagen Estática 2:</label>
-                <input type="text" id="static-image2-url" name="static-image2-url">
-                
-                <button type="submit">Guardar Cambios</button>
-            </form>
-        </div>
+          <h3>Editar Carrusel 2</h3>
+          <label for="carousel2-image1-url">Imagen 1:</label>
+          <input
+            type="text"
+            id="carousel2-image1-url"
+            name="carousel2-image1-url"
+          />
+          <label for="carousel2-image2-url">Imagen 2:</label>
+          <input
+            type="text"
+            id="carousel2-image2-url"
+            name="carousel2-image2-url"
+          />
+          <label for="carousel2-image3-url">Imagen 3:</label>
+          <input
+            type="text"
+            id="carousel2-image3-url"
+            name="carousel2-image3-url"
+          />
+
+          <h3>Editar Imágenes Estáticas</h3>
+          <label for="static-image1-url">Imagen Estática 1:</label>
+          <input type="text" id="static-image1-url" name="static-image1-url" />
+          <label for="static-image2-url">Imagen Estática 2:</label>
+          <input type="text" id="static-image2-url" name="static-image2-url" />
+
+          <button type="submit">Guardar Cambios</button>
+        </form>
+      </div>
     </div>
 
-    
-
-    
-    
     <footer class="footer">
-        <p class="footer-text">Help to Us</p>
+      <p class="footer-text">Help to Us</p>
     </footer>
-    
 
     <script src="funciones.js"></script>
-</body>
+  </body>
 </html>

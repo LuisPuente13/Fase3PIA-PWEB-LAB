@@ -1,82 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Help to Us - LOGIN</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>LOGIN</title>
+  </head>
+  <body>
     <div id="container">
-        <div class="left">
-            <!-- Contenido de la parte izquierda -->
-            <div class="containerLeft">
-                <p>HELP TO US</p> 
-                <p>BIENVENIDOS</p>
-                <img id="LOGO" src="LOGO.jpeg" alt="">
-            </div>
+      <div class="left">
+        <!-- Contenido de la parte izquierda -->
+        <div class="containerLeft">
+          <p>HELP TO US</p>
+          <p>BIENVENIDOS</p>
+          <img id="LOGO" src="LOGO.jpeg" alt="" />
         </div>
-        <div class="right">
-            <!-- Contenido de la parte derecha -->
-            <div class="containerRight">
-                <p>LOGIN</p>
-                <form action="/login" method="post">
-                    <div class="inpCorreo">
-                        <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
-                    </div>
-                    <div class="inpContraseña">
-                        <input type="password" id="password" name="password" placeholder="Contraseña" required>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="remember" name="remember">
-                        <label for="remember">Recordar usuario y contraseña</label>
-                    </div>
-                    <div>
-                        <button type="submit" class="button">Iniciar sesión</button>
-                        <button type="button" id="registrarseBtn" class="button">Registrarse</button>
-                    </div>
-                </form>
+      </div>
+      <div class="right">
+        <!-- Contenido de la parte derecha -->
+        <div class="containerRight">
+          <p>LOGIN</p>
+          <form id="loginForm">
+            <div class="inpCorreo">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Correo electrónico"
+                required
+              />
             </div>
+            <div class="inpContraseña">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Contraseña"
+                required
+              />
+            </div>
+            <div>
+              <input type="checkbox" id="remember" name="remember" />
+              <label for="remember">Recordar usuario y contraseña</label>
+            </div>
+            <div>
+              <button type="submit" class="button">Iniciar sesión</button>
+              <button type="button" id="registrarseBtn" class="button">
+                Registrarse
+              </button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
 
     <!-- Ventana emergente Registro -->
     <div id="registroModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Registro</h2>
-            <form id="registroForm">
-                <label for="emailRegistro">Correo:</label>
-                <input type="email" id="emailRegistro" name="emailRegistro" required><br>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Registro</h2>
+        <form id="registroForm">
+          <label for="emailRegistro">Correo:</label>
+          <input
+            type="email"
+            id="emailRegistro"
+            name="emailRegistro"
+            required
+          /><br />
 
-                <label for="passwordRegistro">Contraseña:</label>
-                <input type="password" id="passwordRegistro" name="passwordRegistro" required><br>
+          <label for="passwordRegistro">Contraseña:</label>
+          <input
+            type="password"
+            id="passwordRegistro"
+            name="passwordRegistro"
+            required
+          /><br />
 
-                <label for="confirmPassword">Validar contraseña:</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+          <label for="confirmPassword">Validar contraseña:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            required
+          /><br />
 
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required><br>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required /><br />
 
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" required><br>
+          <label for="apellido">Apellido:</label>
+          <input type="text" id="apellido" name="apellido" required /><br />
 
-                <label for="rol">Rol:</label>
-                <select id="rol" name="rol" required>
-                    <option value="usuario">Donante</option>
-                    <option value="administrador">Voluntario</option>
-                </select><br>
+          <label for="rol">Rol:</label>
+          <select id="rol" name="rol" required>
+            <option value="">Seleccione</option></select
+          ><br />
 
-                <div class="checkbox-container">
-                    <input type="checkbox" id="terminos" name="terminos" required>
-                    <label for="terminos">Acepto términos y condiciones</label>
-                </div>
+          <div class="checkbox-container">
+            <input type="checkbox" id="terminos" name="terminos" required />
+            <label for="terminos">Acepto términos y condiciones</label>
+          </div>
 
-                <button type="submit" class="button">Registrar</button>
-            </form>
-        </div>
+          <button type="button" class="button" id="registrar">Registrar</button>
+        </form>
+      </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="funciones.js"></script>
-</body>
+  </body>
 </html>
