@@ -6,6 +6,7 @@ import authRoute from "./apis/auth.js";
 import catalogsRoute from "./apis/catalogs.js";
 import disastersRoute from "./apis/disasters.js";
 import packages from "./apis/packages.js";
+import donate from "./apis/donate.js";
 
 const app = express();
 const port = 3000;
@@ -22,7 +23,8 @@ app.use("/api/auth", authRoute);
 app.use("/api/catalogs", catalogsRoute);
 app.use("/api/disasters", disastersRoute);
 app.use("/api/packages", packages);
-
+app.use("/api/donate", donate);
 app.listen(port, () => {
   console.log(`Helptous apis listening on port ${port}`);
 });
+

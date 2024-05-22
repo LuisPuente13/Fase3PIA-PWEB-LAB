@@ -5,7 +5,7 @@ const verifyToken = (req, res, next) => {
   if (!token) return res.status(401).json({ error: "Acceso Denegado" });
   try {
     const decoded = jwt.verify(token, "QJzYLXDN3G");
-    req.userId = decoded.userId;
+    req.userId = decoded.id;
     next();
   } catch (error) {
     res.status(401).json({ error: "Token Invalido" });

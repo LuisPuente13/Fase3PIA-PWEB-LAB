@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
+  localStorage.removeItem("helpToUsToken");
+  localStorage.removeItem("helpToUsUser");
   try {
     const { data } = await axios.get(
       "http://localhost:3000/api/catalogs/roles"
@@ -64,7 +66,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           return;
         }
 
-        window.location.href = "../PaginaInicioAdmin/PaginaInicioVD.html";
+        window.location.href = "../DonarDonante/DonarDonante.html";
       } catch (err) {
         alert(err.response?.data?.message ?? "Ocurrio un error inesperado!");
       }

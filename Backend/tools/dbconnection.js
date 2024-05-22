@@ -1,10 +1,10 @@
 import sql from "mssql";
 
 const sqlConfig = Object.freeze({
-  user: "saaa",
-  password: "123456",
+  user: "sa",
+  password: "Thomas17",
   database: "DB_DesastresV4",
-  server: "DESKTOP-70VK3GE\\SQLEXPRESS",
+  server: "ASUS",
   driver: "msnodesqlv8",
   options: {
     trustedConnection: true,
