@@ -1,19 +1,12 @@
-import sql from "mssql";
-
-const sqlConfig = Object.freeze({
-  user: "sa",
-  password: "Thomas17",
-  database: "DB_DesastresV4",
-  server: "ASUS",
-  driver: "msnodesqlv8",
-  options: {
-    trustedConnection: true,
-    trustServerCertificate: true,
-  },
-});
+import mysql from "mysql";
 
 const sqlConnection = async () => {
-  return await sql.connect(sqlConfig);
+  return mysql.createConnection({
+    host: "database-1.c7mcm644e58m.us-east-2.rds.amazonaws.com",
+    user: "admin",
+    password: "123456789",
+    database: "DB_DesastresV4",
+  });
 };
 
 export default sqlConnection;

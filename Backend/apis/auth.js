@@ -7,37 +7,46 @@ const router = express.Router();
 
 router.post("/register", async (req, res) => {
   const { email, name, idRole, password, lastName } = req.body;
-  const sql = await sqlConnection();
+  const connection = await sqlConnection();
 
-  const { recordset } = await sql
-    .request()
-    .input("email", email)
-    .query("SELECT * FROM USUARIO WHERE Email = @email");
+  connection.connect();
 
-  if (recordset.length) {
-    return res
-      .status(500)
-      .json({ success: false, message: "El email ya existe!" });
-  }
-  cryptPassword(password, async (err, hash) => {
-    if (err) {
-      return res
-        .status(500)
-        .json({ success: false, message: "Ocurrio un error inesperado" });
+  connection.query(
+    "SELECT * FROM `Usuario` WHERE Email = ?",
+    [email],
+    function (error, results, fields) {
+      if (error) {
+        return res
+          .status(500)
+          .json({ success: false, message: "Ocurrio un error inesperado" });
+      }
+      if (results.length) {
+        return res
+          .status(500)
+          .json({ success: false, message: "El email ya existe!" });
+      }
+      cryptPassword(password, async (err, hash) => {
+        if (err) {
+          return res
+            .status(500)
+            .json({ success: false, message: "Ocurrio un error inesperado" });
+        }
+
+        try {
+          connection.query(
+            "INSERT INTO Usuario (NombreUsuario, IdRol, Email, Contrasena, ApellidoUsuario) VALUES (?, ?, ?, ?, ?)",
+            [name, idRole, email, hash, lastName]
+          );
+
+          return res.status(200).json({ success: true });
+        } catch (err) {
+          return res
+            .status(500)
+            .json({ success: false, message: "Ocurrio un error inesperado" });
+        }
+      });
     }
-
-    await sql
-      .request()
-      .input("name", name)
-      .input("idRole", idRole)
-      .input("email", email)
-      .input("hash", hash)
-      .input("lastName", lastName)
-      .query(
-        "INSERT INTO USUARIO (NombreUsuario, IdRol, Email, Contrasena, ApellidoUsuario) VALUES (@name, @idRole, @email, @hash, @lastName)"
-      );
-    return res.status(200).json({ success: true });
-  });
+  );
 });
 
 router.post("/login", async (req, res) => {
