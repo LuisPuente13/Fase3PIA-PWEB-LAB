@@ -8,7 +8,9 @@ const router = express.Router();
 router.get("/roles", async (req, res) => {
   const connection = await sqlConnection();
   connection.connect();
+
   connection.query("SELECT * FROM `Rol`", function (error, results, fields) {
+
     if (error) {
       return res
         .status(500)
@@ -28,34 +30,39 @@ router.get("/roles", async (req, res) => {
 
 // CAMBIAR SQLSERVER --> MYSQL
 router.get("/states", async (req, res) => {
-  const sql = await sqlConnection();
+  const connection = await sqlConnection();
+  connection.connect();
 
-  const { recordset } = await sql.request().query("SELECT * FROM ESTADO");
+  connection.query("SELECT * FROM `ESTADO`", function (error, results, fields) {
 
-  if (!recordset.length) {
+  if (!results.length) {
     return res
       .status(404)
       .json({ success: false, message: "No existen registros" });
   }
 
-  return res.status(200).json({ success: true, values: recordset });
+  return res.status(200).json({ success: true, values: results });
 });
-
+connection.end();
+});
 
 
 // CAMBIAR SQLSERVER --> MYSQL
 router.get("/status", async (req, res) => {
-  const sql = await sqlConnection();
+  const connection = await sqlConnection();
+connection.connect();
 
-  const { recordset } = await sql.request().query("SELECT * FROM ESTATUS");
 
-  if (!recordset.length) {
+  connection.query("SELECT * FROM `ESTATUS`", function (error, results, fields) {
+
+  if (!results.length) {
     return res
       .status(404)
       .json({ success: false, message: "No existen registros" });
   }
 
-  return res.status(200).json({ success: true, values: recordset });
+  return res.status(200).json({ success: true, values: results });
 });
-
+connection.end();
+});
 export default router;
