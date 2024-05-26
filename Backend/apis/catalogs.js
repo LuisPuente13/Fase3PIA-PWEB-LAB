@@ -1,3 +1,7 @@
+//   Agregar --> ``
+
+//   Corregir --> recordset por results
+
 import express from "express";
 import sqlConnection from "../tools/dbconnection.js";
 

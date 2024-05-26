@@ -1,3 +1,9 @@
+//   Agregar --> ``
+
+//   Corregir --> recordset por results
+
+//connection.query( --> validar
+
 import express from "express";
 import jwt from "jsonwebtoken";
 import sqlConnection from "../tools/dbconnection.js";
@@ -34,7 +40,7 @@ router.post("/register", async (req, res) => {
 
         try {
           connection.query(
-            "INSERT INTO Usuario (NombreUsuario, IdRol, Email, Contrasena, ApellidoUsuario) VALUES (?, ?, ?, ?, ?)",
+            "INSERT INTO `Usuario` (NombreUsuario, IdRol, Email, Contrasena, ApellidoUsuario) VALUES (?, ?, ?, ?, ?)",
             [name, idRole, email, hash, lastName]
           );
 
@@ -49,23 +55,26 @@ router.post("/register", async (req, res) => {
   );
 });
 
+
+
+
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
-  const sql = await sqlConnection();
-  const { recordset } = await sql.request().input("email", email).query(`
+  const connection = await sqlConnection();
+  const { results } = await sql.request().input("email", email).query(`
     SELECT 
       u.IdUsuario, u.NombreUsuario, u.ApellidoUsuario, r.NombreRol, r.IdRol, u.Email, u.Contrasena 
     FROM USUARIO u
     INNER JOIN ROL r ON u.IdRol = r.IdRol
     WHERE u.Email = @email`);
 
-  if (!recordset.length) {
+  if (!results.length) {
     return res
       .status(500)
       .json({ success: false, message: "Usuario no existe" });
   }
-  const responsePassword = recordset[0].Contrasena;
+  const responsePassword = results[0].Contrasena;
   comparePassword(password, responsePassword, async (err, isPasswordMatch) => {
     if (err) {
       return res
@@ -75,17 +84,17 @@ router.post("/login", async (req, res) => {
 
     if (isPasswordMatch) {
       const user = {
-        id: recordset[0].IdUsuario,
-        name: recordset[0].NombreUsuario,
-        lastName: recordset[0].ApellidoUsuario,
+        id: results[0].IdUsuario,
+        name: results[0].NombreUsuario,
+        lastName: results[0].ApellidoUsuario,
         role: {
-          id: recordset[0].IdRol,
-          name: recordset[0].NombreRol,
+          id: results[0].IdRol,
+          name: results[0].NombreRol,
         },
-        email: recordset[0].Email,
+        email: results[0].Email,
       };
       const token = jwt.sign(
-        { id: recordset[0].IdUsuario, ...user },
+        { id: results[0].IdUsuario, ...user },
         "QJzYLXDN3G"
       );
 

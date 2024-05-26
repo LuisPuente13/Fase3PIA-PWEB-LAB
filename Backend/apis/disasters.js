@@ -1,3 +1,7 @@
+//   Agregar --> ``
+
+//   Corregir --> recordset por results
+
 import express from "express";
 import sqlConnection from "../tools/dbconnection.js";
 import authMiddleware from "../tools/middlewares/jwt.js";
@@ -5,16 +9,17 @@ import authMiddleware from "../tools/middlewares/jwt.js";
 const router = express.Router();
 
 router.get("/get", authMiddleware, async (req, res) => {
-  const sql = await sqlConnection();
+  const connection = await sqlConnection();
+  connection.connect();
 
-  const { recordset } = await sql.request().query(`
+  const { results } = await sql.request().query(`
     SELECT d.IdDesastre, d.IdEstado, Estado.NombreEstado, d.IdEstatus, Estatus.NombreEstatus, NombreDesastre
-    FROM Desastre d
-    INNER JOIN Estado ON d.IdEstado = Estado.IdEstado
-    INNER JOIN Estatus ON d.IdEstatus = Estatus.IdEstatus
+    FROM `Desastre` d
+    INNER JOIN `Estado` ON d.IdEstado = Estado.IdEstado
+    INNER JOIN `Estatus` ON d.IdEstatus = Estatus.IdEstatus
     `);
 
-  if (!recordset.length) {
+  if (!results.length) {
     return res.status(200).json({
       success: true,
       values: [],
@@ -23,7 +28,7 @@ router.get("/get", authMiddleware, async (req, res) => {
 
   return res.status(200).json({
     success: true,
-    values: recordset.map((record) => ({
+    values: results.map((record) => ({
       id: record.IdDesastre,
       name: record.NombreDesastre,
       state: {
@@ -40,7 +45,8 @@ router.get("/get", authMiddleware, async (req, res) => {
 
 router.post("/add", authMiddleware, async (req, res) => {
   const { idEstado, idEstatus, nombre } = req.body;
-  const sql = await sqlConnection();
+  const connection = await sqlConnection();
+  connection.connect();
 
   try {
     await sql
@@ -49,7 +55,7 @@ router.post("/add", authMiddleware, async (req, res) => {
       .input("idEstatus", idEstatus)
       .input("nombre", nombre)
       .query(
-        "INSERT INTO DESASTRE (IdEstado, IdEstatus, NombreDesastre) VALUES (@idEstado, @idEstatus, @nombre)"
+        "INSERT INTO `DESASTRE` (IdEstado, IdEstatus, NombreDesastre) VALUES (@idEstado, @idEstatus, @nombre)"
       );
 
     return res.status(200).json({ success: true });
@@ -60,13 +66,14 @@ router.post("/add", authMiddleware, async (req, res) => {
 
 router.post("/delete", authMiddleware, async (req, res) => {
   const { idDesastre } = req.body;
-  const sql = await sqlConnection();
+  const connection = await sqlConnection();
+  connection.connect();
 
   try {
     await sql
       .request()
       .input("idDesastre", idDesastre)
-      .query("DELETE FROM DESASTRE WHERE idDesastre = @idDesastre");
+      .query("DELETE FROM `DESASTRE` WHERE idDesastre = @idDesastre");
 
     return res.status(200).json({ success: true });
   } catch (err) {
@@ -76,7 +83,8 @@ router.post("/delete", authMiddleware, async (req, res) => {
 
 router.post("/update", authMiddleware, async (req, res) => {
   const { idDesastre, idEstado, idEstatus, nombre } = req.body;
-  const sql = await sqlConnection();
+  const connection = await sqlConnection();
+  connection.connect();
 
   try {
     await sql
@@ -86,7 +94,7 @@ router.post("/update", authMiddleware, async (req, res) => {
       .input("nombre", nombre)
       .input("idDesastre", idDesastre)
       .query(
-        "UPDATE DESASTRE SET IdEstado = @idEstado, IdEstatus = @idEstatus, NombreDesastre = @nombre WHERE IdDesastre = @idDesastre"
+        "UPDATE `DESASTRE` SET IdEstado = @idEstado, IdEstatus = @idEstatus, NombreDesastre = @nombre WHERE IdDesastre = @idDesastre"
       );
 
     return res.status(200).json({ success: true });

@@ -1,3 +1,7 @@
+//   Agregar --> ``
+
+//   Corregir --> recordset por results
+
 import express from "express";
 import sqlConnection from "../tools/dbconnection.js";
 import authMiddleware from "../tools/middlewares/jwt.js";
@@ -5,9 +9,10 @@ import authMiddleware from "../tools/middlewares/jwt.js";
 const router = express.Router();
 
 router.get("/get", authMiddleware, async (req, res) => {
-  const sql = await sqlConnection();
+  const connection = await sqlConnection();
+  connection.connect();
 
-  const { recordset } = await sql.request().query(`
+  const { results } = await sql.request().query(`
     SELECT 
         Donacion.IdDonacion, 	
         Donacion.IdPaquete,
@@ -24,7 +29,7 @@ router.get("/get", authMiddleware, async (req, res) => {
     INNER JOIN EstatusEntrega ON Donacion.IdEstatusEntrega = EstatusEntrega.IdEstatusEntrega
     `);
 
-  if (!recordset.length) {
+  if (!results.length) {
     return res.status(200).json({
       success: true,
       values: [],
@@ -33,7 +38,7 @@ router.get("/get", authMiddleware, async (req, res) => {
 
   return res.status(200).json({
     success: true,
-    values: recordset.map((record) => ({
+    values: results.map((record) => ({
       id: record.IdDonacion,
       package: {
         id: record.IdPaquete,
@@ -56,7 +61,8 @@ router.get("/get", authMiddleware, async (req, res) => {
 router.post("/add", authMiddleware, async (req, res) => {
   const userId = req.userId;
   const { idPaquete, cantidad, idDesastre } = req.body;
-  const sql = await sqlConnection();
+  const connection = await sqlConnection();
+  connection.connect();
 
   try {
     await sql
@@ -66,7 +72,7 @@ router.post("/add", authMiddleware, async (req, res) => {
       .input("cantidad", cantidad)
       .input("idDesastre", idDesastre)
       .query(
-        "INSERT INTO DONACION (IdUsuario, IdPaquete, Cantidad, IdDesastre, FechaDonacion, IdEstatusEntrega) VALUES (@userId, @idPaquete, @cantidad, @idDesastre, GETDATE(), 1)"
+        "INSERT INTO `DONACION` (IdUsuario, IdPaquete, Cantidad, IdDesastre, FechaDonacion, IdEstatusEntrega) VALUES (@userId, @idPaquete, @cantidad, @idDesastre, GETDATE(), 1)"
       );
 
     return res.status(200).json({ success: true });
