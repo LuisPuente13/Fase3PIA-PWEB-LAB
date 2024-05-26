@@ -13,7 +13,7 @@ router.get("/get", authMiddleware, async (req, res) => {
   connection.connect();
 
   const { results } = await sql.request().query(`
-    SELECT IdPaquete, NombrePaquete, Descripcion, Precio FROM `Paquete` 
+    SELECT IdPaquete, NombrePaquete, Descripcion, Precio FROM Paquete 
     `);
 
   if (!results.length) {

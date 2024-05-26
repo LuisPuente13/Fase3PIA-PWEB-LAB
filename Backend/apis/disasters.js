@@ -14,9 +14,9 @@ router.get("/get", authMiddleware, async (req, res) => {
 
   const { results } = await sql.request().query(`
     SELECT d.IdDesastre, d.IdEstado, Estado.NombreEstado, d.IdEstatus, Estatus.NombreEstatus, NombreDesastre
-    FROM `Desastre` d
-    INNER JOIN `Estado` ON d.IdEstado = Estado.IdEstado
-    INNER JOIN `Estatus` ON d.IdEstatus = Estatus.IdEstatus
+    FROM Desastre d
+    INNER JOIN Estado ON d.IdEstado = Estado.IdEstado
+    INNER JOIN Estatus ON d.IdEstatus = Estatus.IdEstatus
     `);
 
   if (!results.length) {
